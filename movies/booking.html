@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Tickets - MovieNest</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Shared & page styles -->
+  <link rel="stylesheet" href="movies.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header id="navHeader">
+    <nav class="navbar-glass">
+      <div class="nav-brand">
+        <a href="index.html" style="text-decoration:none"><h3>Movie<span>Nest</span></h3></a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinksMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li class="active"><a href="booking.html">Book Ticket</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container py-4">
+    <!-- Progress Tracker -->
+    <div class="progress-tracker mb-3">
+      <div class="step active">Step 1: Movie</div>
+      <div class="step">Step 2: Showtime</div>
+      <div class="step">Step 3: Seats</div>
+      <div class="step">Step 4: Payment</div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-banner" style="background-image:url('img/maxresdefault.jpg');">
+      <div class="overlay"></div>
+      <div class="hero-inner container">
+        <div class="movie-poster-card glass-card">
+          <img src="img/Kingdom-of-the-Planet-of-the-Apes-Movie-Poster-Temp.avif" alt="Poster">
+        </div>
+        <div class="movie-details">
+          <h1 class="booking-movie-title">Movie Title</h1>
+          <div class="meta-row">
+            <div class="meta-badge"><i class="fa fa-star"></i> 8.5</div>
+            <div style="color:var(--muted)">Action • Sci-Fi</div>
+            <div style="color:var(--muted)">2h 28m</div>
+            <div style="color:var(--muted)">2024</div>
+          </div>
+          <p class="text-muted">Premium screening — reserve the best seats for an immersive cinematic experience.</p>
+          <div class="d-flex gap-2 mt-3">
+            <button class="btn btn-ghost" id="watchTrailerBtn"><i class="fa fa-play"></i> Watch Trailer</button>
+            <button class="btn proceed-btn" onclick="document.getElementById('seatSection').scrollIntoView({behavior:'smooth'})">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <div class="row my-4">
+      <div class="col-lg-8">
+        <!-- Showtime -->
+        <div class="glass-card mb-4">
+          <h4 class="mb-3">Select Showtime</h4>
+          <div id="dateCardsContainer" class="date-cards mb-3"></div>
+          <div id="timePillsContainer" class="time-pills"></div>
+        </div>
+
+        <!-- Seat selection -->
+        <section id="seatSection" class="glass-card seating-area">
+          <h4 class="mb-3">Choose Seats</h4>
+          <div class="screen">SCREEN</div>
+          <div id="seatMap" class="seat-map" aria-label="Seat map"></div>
+          <div class="legend mt-3">
+            <div class="legend-item"><div class="legend-color" style="background:linear-gradient(90deg,var(--neon-blue),#6bd8ff)"></div><span>Selected</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:linear-gradient(90deg,var(--neon-red),#c12036)"></div><span>Booked</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:#262626;border:1px solid rgba(255,255,255,0.04)"></div><span>Available</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:linear-gradient(90deg,#ffd166,#ffad60)"></div><span>VIP</span></div>
+          </div>
+        </section>
+
+        <!-- Offers & Snacks -->
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <div class="glass-card p-3" style="flex:1">
+            <h5>Apply Promo</h5>
+            <div class="d-flex gap-2 mt-2">
+              <input class="form-control" id="promoCode" placeholder="Promo code">
+              <button class="btn btn-ghost">Apply</button>
+            </div>
+          </div>
+          <div class="glass-card p-3" style="width:320px">
+            <h5>Recommended Snacks</h5>
+            <div class="snack-row mt-2">
+              <div class="snack-card">Popcorn Combo</div>
+              <div class="snack-card">Cold Drink</div>
+              <div class="snack-card">Nachos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary Sidebar -->
+      <aside class="col-lg-4">
+        <div class="summary-sticky">
+          <div class="summary-card">
+            <h5>Booking Summary</h5>
+            <div class="summary-row"><strong>Movie</strong><span class="booking-movie-title">—</span></div>
+            <div class="summary-row"><strong>Date</strong><span id="summaryDate">—</span></div>
+            <div class="summary-row"><strong>Time</strong><span id="summaryTime">—</span></div>
+            <div class="summary-row"><strong>Seats</strong><span id="summarySeats">None</span></div>
+            <div class="summary-row"><strong>Tickets</strong><span id="summaryTicketCount">0</span></div>
+            <hr>
+            <div class="summary-row"><span>Ticket Price</span><span>$12</span></div>
+            <div class="summary-row"><span>Convenience Fee</span><span id="summaryConvenience">0.00</span></div>
+            <div class="summary-row"><span>GST</span><span id="summaryGST">0.00</span></div>
+            <div class="summary-row"><strong>Grand Total</strong><strong>$<span id="summaryPrice">0.00</span></strong></div>
+            <hr>
+            <form id="finalBookingForm">
+              <div class="form-floating mb-3">
+                <input id="customerName" class="form-control" placeholder="Full name" required>
+                <label for="customerName">Full name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input id="customerEmail" type="email" class="form-control" placeholder="Email" required>
+                <label for="customerEmail">Email</label>
+              </div>
+              <div class="mb-3">
+                <div class="payment-options">
+                    <div class="pay-card" data-method="card">Credit Card</div>
+                    <div class="pay-card" data-method="upi">UPI</div>
+                    <div class="pay-card" data-method="netbank">Net Banking</div>
+                    <div class="pay-card" data-method="wallet">Wallet</div>
+                  </div>
+              </div>
+              <button type="submit" class="proceed-btn">Proceed To Payment</button>
+            </form>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-card text-center p-4">
+        <div style="font-size:56px;color:var(--neon-blue)"><i class="fa-solid fa-circle-check"></i></div>
+        <h4 class="mt-3">Booking Confirmed</h4>
+        <p>Your Booking ID: <strong id="successBookingId">---</strong></p>
+        <div style="height:120px;width:120px;margin:0 auto;background:#111;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#666">QR</div>
+        <div class="mt-3 d-flex gap-2 justify-content-center">
+          <button class="btn btn-ghost" data-bs-dismiss="modal">Close</button>
+          <button class="proceed-btn" onclick="downloadTicket()">Download Ticket</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- 11. Premium Cinematic Footer -->
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="footer-brand-col">
+                <h4>Movie<span>Nest</span></h4>
+                <p>Premium movie streaming and cinema ticketing platform. Stream the latest cinematic marvels at home, or book theater seats for localized showings.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Explore</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies Page</a></li>
+                    <li><a href="booking.html">Book Seat</a></li>
+                    <li><a href="#">Streaming Library</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Corporate Relations</a></li>
+                    <li><a href="#">Terms & Security</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Legals</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Media Center</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 MovieNest Inc. All cinematic rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Center</a>
+                <a href="#">Security Profile</a>
+                <a href="#">Cookie Options</a>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="nav.js"></script>
+    <script src="booking.js"></script>
+</body>
+</html>

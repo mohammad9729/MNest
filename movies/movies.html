@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies - MovieNest</title>
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="movies.css">
+</head>
+<body>
+
+    <!-- Header & Navbar -->
+    <header id="navHeader">
+        <nav class="navbar-glass">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <h3>Movie<span>Nest</span></h3>
+                </a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinksMenu">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="movies.html">Movies</a></li>
+                <li><a href="booking.html">Book Ticket</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content wrapper -->
+    <main style="padding-top: 80px;">
+
+        <!-- 1. Hero Section -->
+        <section class="hero-section">
+            <img src="img/backgroundImage.png" class="hero-bg" alt="Cinematic Hero Backdrop">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="animate-fade-in">Discover Your Next Favorite Movie</h1>
+                <p>Explore curated blockbusters, dark thrillers, mind-bending sci-fi, and critically acclaimed masterworks streaming now on MovieNest.</p>
+                
+                <!-- Search Movie Bar -->
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" id="searchBar" placeholder="Search by title, genre, director...">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-genre="All">All Categories</button>
+                    <button class="filter-btn" data-genre="Action">Action</button>
+                    <button class="filter-btn" data-genre="Horror">Horror</button>
+                    <button class="filter-btn" data-genre="Sci-Fi">Sci-Fi</button>
+                    <button class="filter-btn" data-genre="Drama">Drama</button>
+                    <button class="filter-btn" data-genre="Thriller">Thriller</button>
+                    <button class="filter-btn" data-genre="Adventure">Adventure</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Trending Movies Section -->
+        <section class="container py-5" id="trendingSection">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Trending Movies</h2>
+                <span class="text-muted" style="font-size: 14px;">Dynamic Filtering</span>
+            </div>
+            
+            <!-- Cards Grid Layout -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="trendingGrid">
+                <!-- Movie cards are injected here dynamically by movies.js -->
+            </div>
+        </section>
+
+        <!-- 3. Popular Categories Section -->
+        <section class="container py-5">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Popular Categories</h2>
+                <span class="text-muted" style="font-size: 14px;">Cinematic Themes</span>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+                <!-- Action Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Action">
+                        <img src="img/cat_action.png" class="category-bg" alt="Action Movies">
+                        <h4>Action</h4>
+                    </div>
+                </div>
+                <!-- Horror Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Horror">
+                        <img src="img/cat_horror.png" class="category-bg" alt="Horror Movies">
+                        <h4>Horror</h4>
+                    </div>
+                </div>
+                <!-- Sci-Fi Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Sci-Fi">
+                        <img src="img/cat_scifi.png" class="category-bg" alt="Sci-Fi Movies">
+                        <h4>Sci-Fi</h4>
+                    </div>
+                </div>
+                <!-- Adventure Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Adventure">
+                        <img src="img/cat_adventure.png" class="category-bg" alt="Adventure Movies">
+                        <h4>Adventure</h4>
+                    </div>
+                </div>
+                <!-- Comedy Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Drama">
+                        <img src="img/cat_comedy.png" class="category-bg" alt="Comedy Movies">
+                        <h4>Comedy</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Featured Movie Section -->
+        <section class="container py-5">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Featured Movie</h2>
+                <span class="text-muted" style="font-size: 14px;">Today's Top Pick</span>
+            </div>
+
+            <div class="featured-card">
+                <div class="row g-0">
+                    <div class="col-md-5 featured-poster-col">
+                        <img src="img/oppenheimer.jpeg" class="featured-poster" alt="Featured Movie Poster">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="featured-details h-100">
+                            <span class="featured-badge">Academy Award Winner</span>
+                            <h3 class="featured-title">Oppenheimer</h3>
+                            
+                            <div class="featured-meta">
+                                <span class="featured-rating"><i class="fa-solid fa-star"></i> 8.6/10</span>
+                                <span>3h 0m</span>
+                                <span>2023</span>
+                                <span>Biography, Drama</span>
+                            </div>
+
+                            <p class="featured-desc">
+                                The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb, illustrating the historical events that reshaped the geopolitics of modern society.
+                            </p>
+
+                            <p class="featured-cast">
+                                <strong>Director:</strong> Christopher Nolan <br>
+                                <strong>Cast:</strong> Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr.
+                            </p>
+
+                            <button class="btn-gradient-glow" onclick="watchFeaturedMovie('Oppenheimer')">
+                                <i class="fa-solid fa-play"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Top Rated Movies Section -->
+        <section class="container py-5 mb-5">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Top Rated Movies</h2>
+                <span class="text-muted" style="font-size: 14px;">Critics' Choice</span>
+            </div>
+
+            <!-- Slider Wrapper -->
+            <div class="slider-container-outer">
+                <button class="slider-btn prev" id="slidePrev" aria-label="Scroll left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="slider-container" id="topRatedSlider">
+                    <!-- Movie cards are injected here dynamically by movies.js -->
+                </div>
+
+                <button class="slider-btn next" id="slideNext" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 11. Premium Cinematic Footer -->
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="footer-brand-col">
+                <h4>Movie<span>Nest</span></h4>
+                <p>Premium movie streaming and cinema ticketing platform. Stream the latest cinematic marvels at home, or book theater seats for localized showings.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Explore</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies Page</a></li>
+                    <li><a href="booking.html">Book Seat</a></li>
+                    <li><a href="#">Streaming Library</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Corporate Relations</a></li>
+                    <li><a href="#">Terms & Security</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Legals</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Media Center</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 MovieNest Inc. All cinematic rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Center</a>
+                <a href="#">Security Profile</a>
+                <a href="#">Cookie Options</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 7. Dynamic Details & Trailer Modal -->
+    <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content dark-theme">
+                <div class="modal-header dark-theme">
+                    <h5 class="modal-title" id="modalMovieTitle">Movie Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body dark-theme">
+                    <div class="modal-video-wrapper">
+                        <video id="modalVideoPlayer" controls playsinline>
+                            <source id="modalVideoSource" src="" type="video/mp4">
+                            Your browser does not support HTML5 video player.
+                        </video>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="mb-3 text-white-50">
+                                <span class="badge bg-danger me-2" id="modalMovieGenre">Action</span>
+                                <span class="me-3" id="modalMovieDuration">2h 10m</span>
+                                <span id="modalMovieRating" class="text-warning"><i class="fa-solid fa-star"></i> 8.0</span>
+                            </p>
+                            <h6 class="text-white mb-2" style="font-weight: 600;">Synopsis</h6>
+                            <p class="text-muted" id="modalMovieSynopsis" style="font-size: 14px; line-height: 1.6;"></p>
+                            
+                            <hr style="border-color: rgba(255,255,255,0.1);">
+                            
+                            <p class="text-muted mb-1" style="font-size: 13px;"><strong>Director:</strong> <span id="modalMovieDirector" class="text-white"></span></p>
+                            <p class="text-muted" style="font-size: 13px;"><strong>Cast:</strong> <span id="modalMovieCast" class="text-white"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer dark-theme">
+                    <button type="button" class="btn btn-secondary text-light" data-bs-dismiss="modal" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);">Close</button>
+                    <button type="button" class="btn btn-danger px-4" id="modalBuyTicketBtn" style="background-color: var(--primary-red); border-color: var(--primary-red); box-shadow: var(--glow-red);">Book Tickets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="nav.js"></script>
+    <!-- Dynamic Functionality Script -->
+    <script src="movies.js"></script>
+
+</body>
+</html>

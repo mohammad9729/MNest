@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About & Contact - MovieNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="movies.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <!-- Header -->
+  <header id="navHeader">
+    <nav class="navbar-glass">
+      <div class="nav-brand">
+        <a href="index.html" style="text-decoration:none"><h3>Movie<span>Nest</span></h3></a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="navLinksMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="booking.html">Book Ticket</a></li>
+        <li class="active"><a href="about.html">About</a></li>
+        <li><a href="#contactSection">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="particles"></div>
+    <div class="container d-flex align-items-center gap-4">
+      <div style="flex:1;">
+        <h1>About MovieNest</h1>
+        <p class="lead">Your Ultimate Destination for Movies, Entertainment & Cinema Experiences</p>
+        <div class="cta">
+          <a href="movies.html" class="btn btn-ghost me-2"><i class="fa-solid fa-film"></i> Explore Movies</a>
+          <a href="#contactSection" class="btn btn-primary-cta"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+      <div style="width:360px" class="d-none d-md-block">
+        <div class="glass-card img-card">
+          <img src="img/Kingdom-of-the-Planet-of-the-Apes-Movie-Poster-Temp.avif" alt="collage" style="width:100%;height:auto;display:block">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="container story">
+    <div class="img-card reveal"><img src="img/maxresdefault.jpg" alt="story" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="content reveal">
+      <h3>Our Story</h3>
+      <p>MovieNest was born from a passion for cinema — to make discovering, streaming and booking movies effortless and delightful. We combine handpicked recommendations, lightning-fast streaming, and a premium booking experience so film lovers can focus on what matters: the story on screen.</p>
+      <p>Our mission is to curate the world’s best movies, ensure high-quality playback, and offer premium cinema bookings with intuitive seat selection and secure checkout — all wrapped in a modern cinematic design.</p>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="container">
+    <h4 class="mb-3">Why Choose MovieNest</h4>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="icon"><i class="fa-solid fa-film"></i></div><h5>Huge Movie Collection</h5><p class="text-muted">Thousands of titles across genres and eras.</p></div>
+      <div class="why-card reveal"><div class="icon"><i class="fa-solid fa-tv"></i></div><h5>HD Streaming Experience</h5><p class="text-muted">High bitrate playback with adaptive quality.</p></div>
+      <div class="why-card reveal"><div class="icon"><i class="fa-solid fa-star"></i></div><h5>Latest Movie Releases</h5><p class="text-muted">Premier releases & exclusive early previews.</p></div>
+      <div class="why-card reveal"><div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h5>Multi Device Accessibility</h5><p class="text-muted">Watch on phone, tablet, TV or desktop.</p></div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="container my-4">
+    <div class="counters">
+      <div class="counter reveal"><h3 id="c1">0</h3><p>Movies</p></div>
+      <div class="counter reveal"><h3 id="c2">0</h3><p>Users</p></div>
+      <div class="counter reveal"><h3 id="c3">0</h3><p>Reviews</p></div>
+      <div class="counter reveal"><h3 id="c4">0</h3><p>Categories</p></div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="container my-4">
+    <h4 class="mb-3">Our Team</h4>
+    <div class="team-grid">
+      <div class="team-card reveal"><img src="img/maxresdefault.jpg" alt="dev"><h6>Alex Johnson</h6><small class="text-muted">Founder & CEO</small><div class="mt-2"><a href="#" class="me-2"><i class="fa-brands fa-twitter"></i></a><a href="#" class="me-2"><i class="fa-brands fa-linkedin"></i></a></div></div>
+      <div class="team-card reveal"><img src="img/maxresdefault.jpg" alt="dev"><h6>Priya Singh</h6><small class="text-muted">Head of Product</small><div class="mt-2"><a href="#" class="me-2"><i class="fa-brands fa-instagram"></i></a><a href="#" class="me-2"><i class="fa-brands fa-linkedin"></i></a></div></div>
+      <div class="team-card reveal"><img src="img/maxresdefault.jpg" alt="dev"><h6>Daniel Kim</h6><small class="text-muted">Lead Engineer</small><div class="mt-2"><a href="#" class="me-2"><i class="fa-brands fa-github"></i></a><a href="#" class="me-2"><i class="fa-brands fa-linkedin"></i></a></div></div>
+      <div class="team-card reveal"><img src="img/maxresdefault.jpg" alt="dev"><h6>Maria Lopez</h6><small class="text-muted">Design Lead</small><div class="mt-2"><a href="#" class="me-2"><i class="fa-brands fa-dribbble"></i></a><a href="#" class="me-2"><i class="fa-brands fa-behance"></i></a></div></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="container my-4 testimonial-wrap">
+    <h4 class="mb-3">What Movie Lovers Say</h4>
+    <div style="position:relative;overflow:hidden;height:170px">
+      <div class="testimonial reveal">
+        <div class="avatar"><img src="img/maxresdefault.jpg" alt="u"></div>
+        <div><strong>Jamie R.</strong><p class="text-muted">"MovieNest transformed my movie nights—great selection and easy bookings!"</p></div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="avatar"><img src="img/maxresdefault.jpg" alt="u"></div>
+        <div><strong>Sana K.</strong><p class="text-muted">"Perfect UI & fast streaming. Highly recommended."</p></div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="avatar"><img src="img/maxresdefault.jpg" alt="u"></div>
+        <div><strong>Ravi P.</strong><p class="text-muted">"Seat selection is intuitive and the checkout is seamless."</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information -->
+  <section id="contactSection" class="container my-4">
+    <h4 class="mb-3">Contact Information</h4>
+    <div class="contact-grid">
+      <div class="contact-card reveal"><div class="icon"><i class="fa-solid fa-envelope"></i></div><div><strong>Email</strong><div class="text-muted">support@movienest.com</div></div></div>
+      <div class="contact-card reveal"><div class="icon"><i class="fa-solid fa-phone"></i></div><div><strong>Phone</strong><div class="text-muted">+1 (555) 123-4567</div></div></div>
+      <div class="contact-card reveal"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><div><strong>Office</strong><div class="text-muted">123 Film Ave, Los Angeles</div></div></div>
+      <div class="contact-card reveal"><div class="icon"><i class="fa-solid fa-clock"></i></div><div><strong>Hours</strong><div class="text-muted">Mon - Sun: 9am - 10pm</div></div></div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="form-glass">
+          <h5>Contact Us</h5>
+          <form id="contactForm">
+            <div class="mb-3 form-floating">
+              <input id="cname" class="form-control" placeholder="Full name" required>
+              <label for="cname">Full name</label>
+            </div>
+            <div class="mb-3 form-floating">
+              <input id="cemail" class="form-control" placeholder="Email" required>
+              <label for="cemail">Email address</label>
+            </div>
+            <div class="mb-3 form-floating">
+              <input id="csubject" class="form-control" placeholder="Subject">
+              <label for="csubject">Subject</label>
+            </div>
+            <div class="mb-3 form-floating">
+              <textarea id="cmessage" class="form-control" placeholder="Message" style="height:120px"></textarea>
+              <label for="cmessage">Message</label>
+            </div>
+            <button class="proceed-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h5 class="mb-3">Quick Support</h5>
+        <div class="support-grid">
+          <div class="support-card reveal"><strong>Technical Support</strong><p class="text-muted">Issues with playback or account</p></div>
+          <div class="support-card reveal"><strong>Content Requests</strong><p class="text-muted">Suggest titles & features</p></div>
+          <div class="support-card reveal"><strong>Business Partnership</strong><p class="text-muted">Partnership inquiries</p></div>
+          <div class="support-card reveal"><strong>Feedback</strong><p class="text-muted">Product suggestions & bugs</p></div>
+        </div>
+
+        <div class="map-wrap mt-3">
+          <iframe src="https://www.google.com/maps?q=Los+Angeles&output=embed" style="width:100%;height:250px;border:0;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ
+  <section class="container my-4 faq">
+    <h4 class="mb-3">FAQ</h4>
+    <div class="accordion" id="faqAcc">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How can I book movie tickets?</button></h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Select a movie, pick a showtime, choose seats and checkout.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I watch trailers?</button></h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Yes — use the "Watch Trailer" buttons on movie pages.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Is MovieNest free?</button></h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">MovieNest offers free browsing; some content and bookings may be paid.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">How do I contact support?</button></h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Use the contact form or email support@movienest.com.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Can I cancel bookings?</button></h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Cancellation policies vary by partner cinemas; check booking details.</div></div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Newsletter -->
+  <section class="container my-4">
+    <div class="newsletter form-glass d-flex align-items-center justify-content-between">
+      <div>
+        <h5>Stay Updated With Latest Movies</h5>
+        <p class="text-muted">Get curated picks & release alerts.</p>
+      </div>
+      <div class="d-flex gap-2" style="max-width:480px;width:100%">
+        <input class="form-control" placeholder="Enter your email">
+        <button class="btn btn-primary-cta">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+    <!-- 11. Premium Cinematic Footer -->
+    <footer class="premium-footer">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <h4>Movie<span>Nest</span></h4>
+          <p>Premium movie streaming and cinema ticketing platform. Stream the latest cinematic marvels at home, or book theater seats for localized showings.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+            
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies Page</a></li>
+            <li><a href="booking.html">Book Seat</a></li>
+            <li><a href="#">Streaming Library</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Corporate Relations</a></li>
+            <li><a href="#">Terms & Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legals</h5>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Preferences</a></li>
+            <li><a href="#">Media Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MovieNest Inc. All cinematic rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Center</a>
+          <a href="#">Security Profile</a>
+          <a href="#">Cookie Options</a>
+        </div>
+      </div>
+    </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="nav.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MovieNest - Premium Streaming Platform</title>
+    <!-- Bootstrap 5.3.7 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Shared Premium Style Sheet -->
+    <link rel="stylesheet" href="movies.css">
+    <!-- Homepage Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Glassmorphism Navbar -->
+    <header id="navHeader">
+        <nav class="navbar-glass">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none;">
+                    <h3>Movie<span>Nest</span></h3>
+                </a>
+            </div>
+            
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinksMenu">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="booking.html">Book Ticket</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content OTT Layout -->
+    <main>
+
+        <!-- 1. Hero Carousel (Auto sliding & Cross-fade) -->
+        <section class="homepage-carousel">
+            <!-- Slide 1: Guardians -->
+            <div class="carousel-slide-item active">
+                <img src="img/backgroundImage.png" class="carousel-slide-bg" alt="Guardians of the Galaxy">
+                <div class="carousel-slide-overlay"></div>
+                <div class="carousel-slide-content">
+                    <div class="carousel-slide-meta">
+                        <span>Trending #1</span>
+                        <span>IMDb 8.0</span>
+                        <span>Action / Sci-Fi</span>
+                    </div>
+                    <h2>Guardians of the Galaxy</h2>
+                    <p>A group of intergalactic criminals must pull together to stop a fanatical warrior with plans to purge the universe. An epic space opera loaded with retro vibes, colorful action, and heartwarming loyalty.</p>
+                    <button class="btn-gradient-glow" onclick="showMovieDetails('Guardians of the Galaxy')">
+                        <i class="fa-solid fa-play"></i> Stream Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide 2: Inception -->
+            <div class="carousel-slide-item">
+                <img src="img/maxresdefault.jpg" class="carousel-slide-bg" alt="Inception">
+                <div class="carousel-slide-overlay"></div>
+                <div class="carousel-slide-content">
+                    <div class="carousel-slide-meta">
+                        <span>Blockbuster Classic</span>
+                        <span>IMDb 8.8</span>
+                        <span>Sci-Fi / Thriller</span>
+                    </div>
+                    <h2>Inception</h2>
+                    <p>A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O. Experience Christopher Nolan's mind-bending masterpiece.</p>
+                    <button class="btn-gradient-glow" onclick="showMovieDetails('Inception')">
+                        <i class="fa-solid fa-play"></i> Stream Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide 3: Batman -->
+            <div class="carousel-slide-item">
+                <img src="img/batman.jpg" class="carousel-slide-bg" alt="Batman">
+                <div class="carousel-slide-overlay"></div>
+                <div class="carousel-slide-content">
+                    <div class="carousel-slide-meta">
+                        <span>Critically Acclaimed</span>
+                        <span>IMDb 7.9</span>
+                        <span>Crime / Drama</span>
+                    </div>
+                    <h2>The Batman</h2>
+                    <p>When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's legacy. A dark, gritty neo-noir journey.</p>
+                    <button class="btn-gradient-glow" onclick="showMovieDetails('Batman')">
+                        <i class="fa-solid fa-play"></i> Stream Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators-custom">
+                <div class="carousel-indicator-dot active" data-slide="0"></div>
+                <div class="carousel-indicator-dot" data-slide="1"></div>
+                <div class="carousel-indicator-dot" data-slide="2"></div>
+            </div>
+        </section>
+
+        <!-- 2. Continue Watching Section -->
+        <section class="container py-4 reveal-up">
+            <h4 class="mb-3 text-white" style="font-weight: 700; letter-spacing: 0.5px;">
+                <i class="fa-regular fa-circle-play text-danger me-2"></i>Continue Watching
+            </h4>
+            
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="continue-card" onclick="showMovieDetails('Batman')">
+                        <div class="continue-thumbnail-wrap">
+                            <img src="img/batman.jpg" class="continue-thumbnail" alt="Batman Thumbnail">
+                            <div class="continue-play-overlay">
+                                <div class="continue-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="continue-progress-wrap">
+                                <div class="continue-progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="continue-body">
+                            <div class="continue-title">Batman</div>
+                            <div class="continue-meta">Remaining: 58m of 2h 56m</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="continue-card" onclick="showMovieDetails('Guardians of the Galaxy')">
+                        <div class="continue-thumbnail-wrap">
+                            <img src="img/gardiansof.webp" class="continue-thumbnail" alt="Guardians Thumbnail">
+                            <div class="continue-play-overlay">
+                                <div class="continue-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="continue-progress-wrap">
+                                <div class="continue-progress-fill" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        <div class="continue-body">
+                            <div class="continue-title">Guardians of the Galaxy</div>
+                            <div class="continue-meta">Remaining: 1h 07m of 2h 2m</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="continue-card" onclick="showMovieDetails('Inception')">
+                        <div class="continue-thumbnail-wrap">
+                            <img src="img/inception.webp" class="continue-thumbnail" alt="Inception Thumbnail">
+                            <div class="continue-play-overlay">
+                                <div class="continue-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="continue-progress-wrap">
+                                <div class="continue-progress-fill" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                        <div class="continue-body">
+                            <div class="continue-title">Inception</div>
+                            <div class="continue-meta">Remaining: 1h 58m of 2h 28m</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col d-none d-lg-block">
+                    <div class="continue-card" onclick="showMovieDetails('Oppenheimer')">
+                        <div class="continue-thumbnail-wrap">
+                            <img src="img/oppenheimer.jpeg" class="continue-thumbnail" alt="Oppenheimer Thumbnail">
+                            <div class="continue-play-overlay">
+                                <div class="continue-play-icon"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <div class="continue-progress-wrap">
+                                <div class="continue-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="continue-body">
+                            <div class="continue-title">Oppenheimer</div>
+                            <div class="continue-meta">Remaining: 27m of 3h 0m</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Search Movie Section & Now Showing -->
+        <section class="container py-5 reveal-up">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Now Showing</h2>
+                
+                <!-- Interactive Search Widget -->
+                <div class="d-flex align-items-center gap-2" style="max-width: 300px; width: 100%;">
+                    <div class="position-relative w-100">
+                        <input type="text" id="homeSearchInput" class="form-control" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; color: white; padding: 6px 15px 6px 35px; font-size: 14px;" placeholder="Search now showing...">
+                        <i class="fa-solid fa-magnifying-glass position-absolute text-muted" style="left: 12px; top: 50%; transform: translateY(-50%); font-size: 13px;"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Cards Grid -->
+            <div class="container mt-4" id="card">
+                <div class="row justify-content-center g-4">
+                    
+                    <!-- First 4 visible cards -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="ribbon-tag">Trending</div>
+                            <div class="rating-badge-home">★ 8.0</div>
+                            <img src="img/gardiansof.webp" class="card-img-top card-zoom-effect" alt="Guardians of the Galaxy">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Guardians of the Galaxy</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 6.8</div>
+                            <img src="img/Aquaman.webp" class="card-img-top card-zoom-effect" alt="Aquaman">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Aquaman</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="ribbon-tag" style="background: linear-gradient(135deg, var(--primary-blue-footer) 0%, #3cd8ff 100%); box-shadow: var(--glow-blue-footer);">New</div>
+                            <div class="rating-badge-home">★ 7.9</div>
+                            <img src="img/batman.jpg" class="card-img-top card-zoom-effect" alt="Batman">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Batman</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 4.8</div>
+                            <img src="img/hardtide.jpg" class="card-img-top card-zoom-effect" alt="Hard Tide">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Hard Tide</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden cards (rendered visible when clicking See More) -->
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 8.8</div>
+                            <img src="img/inception.webp" class="card-img-top card-zoom-effect" alt="Inception">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Inception</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 7.4</div>
+                            <img src="img/johnwick.jpg" class="card-img-top card-zoom-effect" alt="John Wick">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">John Wick</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 6.5</div>
+                            <img src="img/Kingdom-of-the-Planet-of-the-Apes-Movie-Poster-Temp.avif" class="card-img-top card-zoom-effect" alt="Planet of the Apes">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Planet of the Apes</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 8.6</div>
+                            <img src="img/oppenheimer.jpeg" class="card-img-top card-zoom-effect" alt="Oppenheimer">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Oppenheimer</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 5.3</div>
+                            <img src="img/the nun.webp" class="card-img-top card-zoom-effect" alt="The Nun">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">The Nun</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 4.2</div>
+                            <img src="img/The-Scent-Horror-Movie-Poster-2020-1090x1536.webp" class="card-img-top card-zoom-effect" alt="The Scent">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">The Scent</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 5.5</div>
+                            <img src="img/thechase.jpg" class="card-img-top card-zoom-effect" alt="The Chase">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">The Chase</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 extra-card d-none">
+                        <div class="card h-100 border-0 position-relative movie-card">
+                            <div class="rating-badge-home">★ 6.8</div>
+                            <img src="img/us.jpg" class="card-img-top card-zoom-effect" alt="Us">
+                            <div class="card-body bg-dark text-light p-3">
+                                <h5 class="card-title text-white fs-6 mb-2">Us</h5>
+                                <button class="btn btn-primary btn-sm w-100 see-more-btn">See more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- See More Button -->
+                <div class="text-center mt-5 mb-3">
+                    <button id="seeMoreBtn" class="btn btn-outline-light px-4" style="border-radius: 20px;">See More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Genre Cards Section -->
+        <section class="container py-5 reveal-up">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Popular Genres</h2>
+                <span class="text-muted" style="font-size: 14px;">Select a Vibe</span>
+            </div>
+
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3">
+                <!-- Action Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Action">
+                        <img src="img/cat_action.png" class="category-bg" alt="Action Movies">
+                        <h4>Action</h4>
+                    </div>
+                </div>
+                <!-- Horror Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Horror">
+                        <img src="img/cat_horror.png" class="category-bg" alt="Horror Movies">
+                        <h4>Horror</h4>
+                    </div>
+                </div>
+                <!-- Sci-Fi Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Sci-Fi">
+                        <img src="img/cat_scifi.png" class="category-bg" alt="Sci-Fi Movies">
+                        <h4>Sci-Fi</h4>
+                    </div>
+                </div>
+                <!-- Adventure Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Adventure">
+                        <img src="img/cat_adventure.png" class="category-bg" alt="Adventure Movies">
+                        <h4>Adventure</h4>
+                    </div>
+                </div>
+                <!-- Comedy Movies -->
+                <div class="col">
+                    <div class="category-card" data-genre="Drama">
+                        <img src="img/cat_comedy.png" class="category-bg" alt="Comedy Movies">
+                        <h4>Comedy</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Featured Movie Banner Section -->
+        <section class="container py-5 reveal-in">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Featured Highlight</h2>
+                <span class="text-muted" style="font-size: 14px;">Masterclass Showcase</span>
+            </div>
+
+            <div class="featured-card">
+                <div class="row g-0">
+                    <div class="col-md-5 featured-poster-col">
+                        <img src="img/inception.webp" class="featured-poster" alt="Inception Banner Poster">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="featured-details h-100">
+                            <span class="featured-badge" style="background: linear-gradient(90deg, var(--primary-blue-footer), #3cd8ff); box-shadow: var(--glow-blue-footer);">Sci-Fi Landmark</span>
+                            <h3 class="featured-title">Inception</h3>
+                            
+                            <div class="featured-meta">
+                                <span class="featured-rating"><i class="fa-solid fa-star"></i> 8.8/10</span>
+                                <span>2h 28m</span>
+                                <span>2010</span>
+                                <span>Action, Sci-Fi</span>
+                            </div>
+
+                            <p class="featured-desc">
+                                A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O. A masterpiece that bends time, space, and perspective.
+                            </p>
+
+                            <p class="featured-cast">
+                                <strong>Director:</strong> Christopher Nolan <br>
+                                <strong>Cast:</strong> Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy
+                            </p>
+
+                            <button class="btn-gradient-glow" onclick="showMovieDetails('Inception')">
+                                <i class="fa-solid fa-play"></i> Watch Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Latest Trailers Slider Section -->
+        <section class="container py-5 reveal-up">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Latest Trailers</h2>
+                <span class="text-muted" style="font-size: 14px;">Instant Previews</span>
+            </div>
+
+            <div class="vid bg-dark p-4 rounded-4" style="border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <!-- Main Player -->
+                <div class="main-video text-center mb-4">
+                    <video id="mainPlayer" class="w-75 rounded-4" style="border: 1px solid rgba(255,255,255,0.1); aspect-ratio: 16/9; max-height: 450px;" controls poster="img/maxresdefault.jpg">
+                        <source src="video/conjuring.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                
+                <!-- Thumbnails -->
+                <div class="thumbnails mt-3">
+                    <div class="thumbnail border-glow-blue" onclick="changeVideo('video/venom tld.mp4', 'img/maxresdefault.jpg')">
+                        <video muted autoplay loop playsinline>
+                            <source src="video/venom tld.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">&#9658;</div>
+                    </div>
+
+                    <div class="thumbnail border-glow-red" onclick="changeVideo('video/conjuring.mp4', 'img/maxresdefault.jpg')">
+                        <video muted autoplay loop playsinline>
+                            <source src="video/conjuring.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">&#9658;</div>
+                    </div>
+
+                    <div class="thumbnail border-glow-blue" onclick="changeVideo('video/venom tld.mp4', 'img/maxresdefault.jpg')">
+                        <video muted autoplay loop playsinline>
+                            <source src="video/venom tld.mp4" type="video/mp4">
+                        </video>
+                        <div class="play-icon">&#9658;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Top Rated Movies Slider Section (Carousel Shelf) -->
+        <section class="container py-5 reveal-up">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Top Rated Movies</h2>
+                <span class="text-muted" style="font-size: 14px;">Must Watch Lists</span>
+            </div>
+
+            <!-- Slider Shelf -->
+            <div class="slider-container-outer">
+                <button class="slider-btn prev" id="slidePrev" aria-label="Scroll left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="slider-container" id="topRatedSlider">
+                    <!-- Cards will be dynamically loaded via index.js -->
+                </div>
+
+                <button class="slider-btn next" id="slideNext" aria-label="Scroll right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 8. Upcoming Movies Section -->
+        <section class="container py-5 reveal-up">
+            <div class="section-title-wrap">
+                <h2 class="section-title text-white">Upcoming Releases</h2>
+                <span class="text-muted" style="font-size: 14px;">Coming Soon</span>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <!-- Upcoming 1 -->
+                <div class="col">
+                    <div class="card h-100 border-0 bg-dark text-light position-relative movie-card">
+                        <span class="badge bg-danger position-absolute" style="top:10px; left:10px; z-index: 5;">Coming July</span>
+                        <img src="img/Kingdom-of-the-Planet-of-the-Apes-Movie-Poster-Temp.avif" class="card-img-top card-zoom-effect" alt="Kingdom of the Planet of the Apes">
+                        <div class="card-body p-3">
+                            <h6 class="text-white mb-1" style="font-weight: 600;">Planet of the Apes</h6>
+                            <p class="text-muted mb-0" style="font-size: 12px;">Adventure / Sci-Fi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming 2 -->
+                <div class="col">
+                    <div class="card h-100 border-0 bg-dark text-light position-relative movie-card">
+                        <span class="badge bg-danger position-absolute" style="top:10px; left:10px; z-index: 5;">Coming August</span>
+                        <img src="img/the nun.webp" class="card-img-top card-zoom-effect" alt="The Nun II">
+                        <div class="card-body p-3">
+                            <h6 class="text-white mb-1" style="font-weight: 600;">The Nun II</h6>
+                            <p class="text-muted mb-0" style="font-size: 12px;">Horror / Mystery</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming 3 -->
+                <div class="col">
+                    <div class="card h-100 border-0 bg-dark text-light position-relative movie-card">
+                        <span class="badge bg-danger position-absolute" style="top:10px; left:10px; z-index: 5;">Coming September</span>
+                        <img src="img/The-Scent-Horror-Movie-Poster-2020-1090x1536.webp" class="card-img-top card-zoom-effect" alt="The Scent Part II">
+                        <div class="card-body p-3">
+                            <h6 class="text-white mb-1" style="font-weight: 600;">The Scent: Revelations</h6>
+                            <p class="text-muted mb-0" style="font-size: 12px;">Horror / Thriller</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming 4 -->
+                <div class="col">
+                    <div class="card h-100 border-0 bg-dark text-light position-relative movie-card">
+                        <span class="badge bg-danger position-absolute" style="top:10px; left:10px; z-index: 5;">Coming October</span>
+                        <img src="img/thechase.jpg" class="card-img-top card-zoom-effect" alt="The Chase">
+                        <div class="card-body p-3">
+                            <h6 class="text-white mb-1" style="font-weight: 600;">The Chase: Endgame</h6>
+                            <p class="text-muted mb-0" style="font-size: 12px;">Action / Crime</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Animated Statistics Section -->
+        <section class="container py-5 reveal-in" id="statsSection">
+            <div class="stats-container">
+                <div class="row g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="15" data-suffix="k+">0</div>
+                            <div class="stat-label">Movies Catalog</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="450" data-suffix="k+">0</div>
+                            <div class="stat-label">Active Streamers</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="120" data-suffix="+">0</div>
+                            <div class="stat-label">Cinema Partners</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="12" data-suffix=" Awards">0</div>
+                            <div class="stat-label">Industry Awards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Newsletter Subscription Section -->
+        <section class="container py-5 reveal-up">
+            <div class="newsletter-card">
+                <h3>Subscribe to Movie<span>Nest</span> Newsletter</h3>
+                <p>Stay informed about exclusive early access tickets, streaming release dates, weekly cinephile updates, and platform promotions.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to MovieNest newsletters!');">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter-submit">Subscribe Now</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 11. Premium Cinematic Footer -->
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="footer-brand-col">
+                <h4>Movie<span>Nest</span></h4>
+                <p>Premium movie streaming and cinema ticketing platform. Stream the latest cinematic marvels at home, or book theater seats for localized showings.</p>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Explore</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies Page</a></li>
+                    <li><a href="booking.html">Book Seat</a></li>
+                    <li><a href="#">Streaming Library</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Corporate Relations</a></li>
+                    <li><a href="#">Terms & Security</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>Legals</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Media Center</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 MovieNest Inc. All cinematic rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Center</a>
+                <a href="#">Security Profile</a>
+                <a href="#">Cookie Options</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 12. Dynamic Movie Details Modal -->
+    <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content dark-theme" style="background-color: #141414 !important; border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 16px; color: white;">
+                <div class="modal-header dark-theme" style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 20px;">
+                    <h5 class="modal-title text-white" id="modalMovieTitle">Movie Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="filter: invert(1) grayscale(1) brightness(2);"></button>
+                </div>
+                
+                <div class="modal-body dark-theme" style="padding: 25px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 mb-3 mb-md-0">
+                                <img id="modalMoviePoster" src="" class="img-fluid rounded-3 border" alt="Movie Poster" style="border-color: rgba(255,255,255,0.1) !important; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                            </div>
+                            <div class="col-md-8">
+                                <p class="mb-3">
+                                    <span class="badge bg-danger me-2" id="modalMovieGenre">Action</span>
+                                    <span class="me-3" id="modalMovieDuration">2h 10m</span>
+                                    <span id="modalMovieRating" class="text-warning"><i class="fa-solid fa-star"></i> 8.0</span>
+                                </p>
+                                <h6 class="text-white mb-2" style="font-weight: 600;">Synopsis</h6>
+                                <p class="text-muted" id="modalMovieSynopsis" style="font-size: 14px; line-height: 1.6;"></p>
+                                
+                                <hr style="border-color: rgba(255,255,255,0.1);">
+                                
+                                <p class="text-muted mb-1" style="font-size: 13px;"><strong>Director:</strong> <span id="modalMovieDirector" class="text-white"></span></p>
+                                <p class="text-muted" style="font-size: 13px;"><strong>Cast:</strong> <span id="modalMovieCast" class="text-white"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer dark-theme" style="border-top: 1px solid rgba(255,255,255,0.05); padding: 15px 20px;">
+                    <button type="button" class="btn btn-secondary text-light" data-bs-dismiss="modal" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);">Close</button>
+                    <button type="button" class="btn btn-danger px-4" id="finalBuyTicket" style="background-color: var(--primary-red-footer); border-color: var(--primary-red-footer); box-shadow: var(--glow-red-footer);">Book Tickets</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="nav.js"></script>
+    <!-- Dynamic Logic Script -->
+    <script src="index.js"></script>
+
+</body>
+</html>
